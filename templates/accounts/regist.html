@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+<!-- settings.pyでcsrf対策が記述されているので、formsの中で下を記述するだけで、CSRF対策できる -->
+{% csrf_token %}
+{{ regist_form.as_p }}
+<input type="submit" value="ユーザー登録">
+</form>
+{% endblock %}
